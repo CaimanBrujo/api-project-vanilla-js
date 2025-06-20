@@ -1,9 +1,31 @@
 import './style.css';
-import logo from './assets/images/logo-js.svg';
+import elements from './ui/elements.js';
+import { fetchGif } from './api/giphy.js';
+import { renderGif, renderError } from './ui/renderGif.js';
 
-const img = document.createElement('img');
-img.src = logo;
-img.alt = 'Logo';
-img.width = 150;
+window.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const gifUrl = await fetchGif('coding');
+    renderGif(gifUrl);
+  } catch (error) {
+    renderError("Couldn't load default GIF.");
+  }
+});
 
-document.body.appendChild(img);
+elements.form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const term = elements.input.value.trim();
+
+  if (!term) {
+    renderError('Please enter a keyword.');
+    return;
+  }
+
+  try {
+    const gifUrl = await fetchGif(term);
+    renderGif(gifUrl);
+  } catch (error) {
+    renderError(error.message);
+  }
+});
