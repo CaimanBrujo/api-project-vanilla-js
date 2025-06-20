@@ -1,9 +1,9 @@
-# ⚙️ Webpack Starter Template
+# 🌀 Giphy API Project – Vanilla JS + Webpack
 
-A clean and minimal Webpack 5 setup for modern JavaScript projects.  
-Includes CSS support, image handling, and dynamic HTML generation.
+A simple and clean JavaScript app that fetches and displays GIFs using the Giphy API.  
+Built with Webpack 5, modular JS, and a dark, responsive UI.
 
-> Clone, install, and start building right away — no setup hassle.
+> Live Preview: https://caimanbrujo.github.io/api-project-vanilla-js/
 
 ---
 
@@ -11,100 +11,72 @@ Includes CSS support, image handling, and dynamic HTML generation.
 
 ### 1. Clone the repository
 
-```bash
-git clone git@github.com:CaimanBrujo/template-webpack.git my-project
-cd my-project
-```
+git clone git@github.com:CaimanBrujo/api-project-vanilla-js.git
+cd api-project-vanilla-js
 
 ### 2. Install dependencies
 
-```bash
 npm install
-```
 
 ### 3. Start development server
 
-```bash
 npm run dev
-```
 
-Opens the project at http://localhost:8080/ with live reload enabled.
+Opens the project at http://localhost:8080/ with live reload.
 
 ---
 
-## 📦 Build for production
+## Build for production
 
-```bash
 npm run build
-```
 
-Creates a dist/ folder with everything ready to deploy:
+Builds the app into the `dist/` folder, ready for deployment:
 
-- index.html generated from the template
-- Bundled main.js and extracted main.css
-- Optimized images inside dist/assets/
-
----
-
-## Code Quality: ESLint + Prettier
-
-This template includes ESLint and Prettier to keep your code clean, consistent, and error-free.
-
-### Lint your code
-
-```bash
-npm run lint
-```
-
-Runs ESLint on all .js files inside src/ and reports any issues or bad practices (like var, ==, etc).
-
-ESLint uses the new Flat Config system with modern JS rules.
-
-### Format your code
-
-```bash
-npm run format
-```
-
-Runs Prettier on all .js, .css, and .html files to fix indentation, quotes, spacing, and more.
-
-Prettier handles formatting — ESLint handles code style and errors.
-
----
-
-## 📁 Project Structure
-
-```
-template-webpack/
-├── dist/                  ← Build output (auto-generated when builded)
-├── src/
-│   ├── assets/images/     ← Image assets
-│   ├── index.js           ← JavaScript entry point
-│   ├── style.css          ← Global styles (with CSS variables)
-│   └── template.html      ← HTML template for html-webpack-plugin
-├── .gitignore
-├── eslint.config.js       ← ESLint Flat Config
-├── .prettierrc            ← Prettier config
-├── .prettierignore        ← Files to ignore when formatting
-├── package.json
-├── webpack.config.js
-└── README.md
-```
+- index.html from template  
+- Bundled JS and CSS  
+- Optimized image assets  
 
 ---
 
 ## Features
 
-- Webpack 5
-- CSS + variables + reset
-- Image support with asset/resource
-- Auto-generated index.html via html-webpack-plugin
-- Clean dist/ builds with mini-css-extract-plugin
-- Live reload with webpack-dev-server
-- ESLint + Prettier integrated for clean, consistent code
+- Fetch GIFs from Giphy API using fetch() + Promises  
+- Shows a default “coding” GIF on load  
+- Input to search for any keyword  
+- Error handling for empty results or network issues  
+- Fallback image and error message if no match is found  
+- Modular architecture: API logic, UI rendering, and DOM refs separated  
+- Dark mode styling with CSS variables  
 
 ---
 
-## Author
+## Project Structure
+
+api-project-vanilla-js/
+├── dist/                  ← Build output
+├── src/
+│   ├── api/giphy.js       ← Handles API requests
+│   ├── ui/elements.js     ← DOM selectors
+│   ├── ui/renderGif.js    ← DOM update logic
+│   ├── assets/images/     ← Fallback image
+│   ├── index.js           ← App entry point
+│   ├── style.css          ← Global styles
+│   └── template.html      ← HTML template
+├── webpack.config.js
+└── README.md
+
+---
+
+## Development Tools
+
+- Webpack 5 for bundling  
+- html-webpack-plugin for dynamic HTML  
+- CSS Loader + Style Loader for styles  
+- Asset Modules for images  
+- ESLint + Prettier for code quality
+
+---
+
+## 🧙 Author
 
 Made with code by [Caimán Brujo](https://github.com/CaimanBrujo)

@@ -7,7 +7,6 @@ export async function fetchGif(searchTerm) {
   const response = await fetch(url, { mode: 'cors' });
   const data = await response.json();
 
-  // Giphy devuelve 200 incluso cuando no hay resultados
   if (!data.data || !data.data.images) {
     throw new Error('No GIF found for that term.');
   }
