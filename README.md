@@ -51,7 +51,7 @@ Builds the app into the `dist/` folder, ready for deployment:
 ---
 
 ## Project Structure
-
+```
 api-project-vanilla-js/
 ├── dist/                  ← Build output
 ├── src/
@@ -64,7 +64,7 @@ api-project-vanilla-js/
 │   └── template.html      ← HTML template
 ├── webpack.config.js
 └── README.md
-
+```
 ---
 
 ## Development Tools
